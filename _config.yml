@@ -11,7 +11,7 @@ github_repo: "https://github.com/zhangchenwei115/zhangchenwei115.github.io.git" 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "你还呀"
+sidebar-about-description: "你好呀"
 sidebar-avatar: /img/avatar_binggan.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
