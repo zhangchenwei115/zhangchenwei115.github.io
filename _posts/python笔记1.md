@@ -1,0 +1,125 @@
+2020-12-04  
+# 第一章：杂七杂八的
+---
+代码规范，开头可以填上一些信息，比如作者版权
+```bash
+# -*- coding:utf-8 -*-
+# @功能描述：todo
+# @程序作者：chenwei
+# @版权信息：copy right
+```
+---
+比如游戏中生命值输出，可以带颜色，还有可以用乘号，来复制。 
+
+```bash
+print("\n英雄名称")
+print("生命值："+3*"■"+2*"▢")#no color
+print("生命值："+"\033[93m"+3*"■"+2*"▢"+"\033[0m")# add color 
+```
+---
+# 第二章：变量，表达式，运算符
+**python3中有六个标准的数据类型:**  
+* 数字类型：Number
+* 字符串类型：String
+* 元组类型：Tuple
+* 列表类型：List
+* 集合类型：Set
+* 字典类型： Dictionary  
+  
+    
+    
+列表和元组的区别： 
+```bash
+abcd=(1,2,3,4) #元组一旦定义，大小就不能改变
+list1  = [1,2,3,4,5] #列表比元组更加灵活，可以追加改变
+list1.append(112) #append，追加函数
+```
+注意：比如输入  
+```bash
+phone = input()
+phone1=phone + 1
+```
+此时这个phone是字符串类型，不能当作整数类型加减乘除，有以下方法可以加减乘除： 
+1. 把phone变成整数，phone = int（phone）
+2. 使用强大的eval函数:
+```bash
+phone=eval(input(...))
+```
+小技巧，一个很大的数字怎么知道有多少位，首先转换成字符串，然后用len去看有多少字符串，举例：  
+```bash
+print(len(str(2**32768))
+```
+如何计算一下运算时间，需要加入time函数
+```bash
+import time
+start = time.time()
+print(len(str(2**123456)))
+print("Dauer",time.time()-start)
+#开始时间减去结束时间
+```
+---
+eval和input  
+相当于把字符串变成数字
+```bash
+result = input("please input a number:")
+# result = int(result)
+# result = float(result)
+result = evla(result)
+result **=2
+print("the result is", result)
+```
+---
+### 使用字符串format方法  
+语法：  
+```bash
+<模板字符串>.format(<逗号分隔的参数>)
+#示例
+print("{}上{}下".format(7,8))
+# 7上8下
+
+str = "今天是个好日子呀好呀好日子"
+print("|{0:30}|".format(str))   #如果后面的参数是字符串，默认左对齐，数字则是默认右对齐
+print("|{0:>30}|".format(str)) #>30 宽度为30个字符，右对齐
+print("|{0:^30}|".format(str)) #^30 宽度为30个字符，居中对齐
+print("|{0:<30}|".format(str)) #<30
+
+print("|{0:#30}|".format(str))   #str没有30个字符，多的就用#填充
+```
+更多用法请google
+
+第二章笔记结束
+--2020.12.04  
+
+---
+# 第三章
+## 运算符与表达式  
+布尔类型：
+
+布尔类型取值为True/False，python 中1表示True，0表示False
+**布尔类型建议使用is开头**
+```bash
+is_i_am_happy = true
+print(type(is_a))
+print("今天天气不错：", not is_i_am_happy)
+print(int(is_i_am_happy))
+#注意此处打印的第一个是bool，代表is_i_am_happy是布尔类型，第二个打印出来的是今天天气不错: false,第三个打印的是1.因为true就是1
+```
+**注意在python中，非零（1）表示真，零表示假**  
+
+---
+## 条件结构  
+举例，算圆的半径  
+```bash
+radius = eval(input("请输入一个圆的半径："))
+#注意这里加了一个eval，之前上一章讲过，让输入变成浮点数，不然就是string不是数字没法后面的计算  
+if radius >= 0:
+    area = 3.14*radius**2
+    print("半径为{:.2f}的园的面积为{:.2f}".format(radius,area))
+#注意语法format的用法！！！
+else
+    print
+```
+
+---
+## 逻辑运算符
+逻辑运算符也叫布尔运算符，与或非，and or not
