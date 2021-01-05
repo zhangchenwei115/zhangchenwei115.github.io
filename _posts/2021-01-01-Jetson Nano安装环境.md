@@ -4,7 +4,7 @@ title:      Jetson Nano安装环境
 subtitle:   如何在Jetson Nano上运行3d姿态检测模型
 date:       2021-01-01 
 author:     Chenwei
-header-img: img\Jetson_Nano.png
+header-img: img\Jetson_Nano.jpg
 catalog: true
 tags:
     - 机器学习
