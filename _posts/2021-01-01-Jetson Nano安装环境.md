@@ -4,7 +4,7 @@ title:      Jetson Nano安装环境
 subtitle:   如何在Jetson Nano上运行3d姿态检测模型
 date:       2021-01-01 
 author:     Chenwei
-header-img: img/tensorflow.jpg
+header-img: img\Jetson_Nano.png
 catalog: true
 tags:
     - 机器学习
@@ -94,4 +94,8 @@ nvcamerasrc ! video/x-raw(memory:NVMM), width=1920, height=(int)1080,\
  videoconvert ! video/x-raw, format=(string)BGR ! appsink
  ```
  稍改原代码结构，即可实现运行。
- 
+
+ # 效果
+ 因为摄像头没有固定，所以无法调整参数，此效果人物没有在中间。后期准备使用3D打印机打印出Nano和摄像头的支架，此事后续再写把~此效果没有经过tensorrt的加速，因为摄像头参数等没有调好，使用tensorrt加速过后检测人体和速度都还有问题。目前原版lightweight openpose不经过加速在Jetson Nano上跑出来的效果有6FPS。希望后期利用tensorrt加速能到到15FPS。
+
+![picture1](/img/3dresults.png)
